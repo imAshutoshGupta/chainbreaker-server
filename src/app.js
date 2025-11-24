@@ -6,6 +6,8 @@ import morgan from 'morgan';
 // Import Routes
 import healthRoutes from './routes/health.js';
 import userRoutes from './routes/userRoutes.js';
+import factCheckRoutes from './routes/factCheckRoutes.js';
+
 
 const app = express();
 
@@ -17,6 +19,7 @@ app.use(express.json());
 // Routes
 app.use('/', healthRoutes);
 app.use('/api/users', userRoutes);
+app.use("/api/factCheck", factCheckRoutes);
 
 // 404 Handler
 app.use((req, res) => {
